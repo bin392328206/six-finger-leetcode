@@ -40,6 +40,5 @@ public class BinaryTreeNode {
         RchildNode = rchildNode;
     }
 
-    public boolean RchildNode() {
-    }
+
 }
