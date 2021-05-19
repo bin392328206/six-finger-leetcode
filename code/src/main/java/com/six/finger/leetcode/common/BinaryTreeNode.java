@@ -7,9 +7,9 @@ package com.six.finger.leetcode.common;
  * 二叉树的公共类
  */
 public class BinaryTreeNode {
-    private int data;
-    private BinaryTreeNode LchildNode;
-    private BinaryTreeNode RchildNode;
+    public int data;
+    public BinaryTreeNode LchildNode;
+    public BinaryTreeNode RchildNode;
 
     public BinaryTreeNode(int data) {
         super();
@@ -38,5 +38,8 @@ public class BinaryTreeNode {
 
     public void setRchildNode(BinaryTreeNode rchildNode) {
         RchildNode = rchildNode;
+    }
+
+    public boolean RchildNode() {
     }
 }
