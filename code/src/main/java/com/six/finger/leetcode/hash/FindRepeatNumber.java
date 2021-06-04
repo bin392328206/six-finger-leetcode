@@ -19,7 +19,7 @@ public class FindRepeatNumber {
     public static void main(String[] args) {
         int[] s = {2, 3, 1, 0, 2, 5, 3};
 
-        System.out.println(findRepeatNumber(s));
+        System.out.println(findRepeatNumber1(s));
     }
 
     public static int findRepeatNumber(int[] nums) {
@@ -31,6 +31,25 @@ public class FindRepeatNumber {
             }
         }
         return res;
+    }
+
+    public static int findRepeatNumber1(int[] nums) {
+        int i=0;
+        while (i<nums.length){
+            if (i==nums[i]){
+                i++;
+                continue;
+            }
+            if (nums[nums[i]]==nums[i]){
+                return nums[i];
+            }
+            int tmp = nums[i];
+            nums[i] = nums[tmp];
+            nums[tmp] = tmp;
+
+        }
+        return -1;
+
     }
 }
 
