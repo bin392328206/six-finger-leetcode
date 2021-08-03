@@ -18,9 +18,9 @@ public class FindLength {
 
 
     public static void main(String[] args) {
-        int[] nums1={1,2,3,2,1};
-        int[] nums2={3,2,1,4,7};
-        int length = findLength(nums1, nums2);
+        int[] nums1={3,2,1,5,7};
+        int[] nums2={3,2,1,5,7};
+        int length = findLength2(nums1, nums2);
         System.out.println(length);
     }
 
@@ -46,25 +46,26 @@ public class FindLength {
     }
 
 
-    public static int findLength1(int[] nums1, int[] nums2) {
-        int n= nums1.length, m=nums2.length;
-        int ret=0;
-
-        for(int i=0;i<n;i++){
-            int len=Math.min(m,n-1);
-            int maxlen=maxLength(nums1,nums2,i,0,len);
+    public static int findLength1(int[] A, int[] B) {
+        int n = A.length, m = B.length;
+        int ret = 0;
+        for (int i = 0; i < n; i++) {
+            int len = Math.min(m, n - i);
+            int maxlen = maxLength(A, B, i, 0, len);
+            ret = Math.max(ret, maxlen);
         }
-        for (int i=0;i<m;i++){
-            int len=Math.min(n,m-1);
-            int maxlen=maxLength(nums1,nums2,0,i,len);
-            ret=Math.max(ret,maxlen);
+        for (int i = 0; i < m; i++) {
+            int len = Math.min(n, m - i);
+            int maxlen = maxLength(A, B, 0, i, len);
+            ret = Math.max(ret, maxlen);
         }
         return ret;
+
     }
 
     private static int maxLength(int[] nums1, int[] nums2, int i, int i1, int len) {
             int ret=0,k=0;
-            for (int a=0;i<len;i++){
+            for (int a=0;a<len;a++){
                 if (nums1[i+a]==nums2[i1+a]){
                     k++;
                 }else {
@@ -75,5 +76,45 @@ public class FindLength {
             }
             return ret;
 
+    }
+
+
+
+    public static int findLength2(int[] A, int[] B) {
+            if (A.length<1||B.length<1){
+                return -1;
+            }
+            int a=A.length,b=B.length;
+            int ret=0;
+            for (int i=0;i<a;i++){
+                int min = Math.min(a, b - i);
+                int i1 = maxLength1(A, B, i, 0, min);
+                ret=Math.max(ret,i1);
+            }
+
+            for (int i=0;i<b;i++){
+                int min=Math.min(b,a-i);
+                int i1=maxLength1(A,B,0,i,min);
+                ret=Math.max(ret,i1);
+            }
+
+            return ret;
+
+
+    }
+
+    private static int maxLength1(int[] A, int[] B, int a, int b, int len) {
+        int ret=0,k=0;
+        for (int i=0;i<len;i++){
+            if (A[i+a]==B[i+b]){
+                k++;
+            }else {
+                k=0;
+            }
+
+            ret=Math.max(ret,k);
+        }
+
+        return ret;
     }
 }
