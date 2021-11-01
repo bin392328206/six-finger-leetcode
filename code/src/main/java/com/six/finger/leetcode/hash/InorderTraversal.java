@@ -1,8 +1,7 @@
 package com.six.finger.leetcode.hash;
 
-import com.six.finger.leetcode.common.BinaryTreeNode;
+import com.six.finger.leetcode.common.TreeNode;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,13 +14,13 @@ import java.util.List;
  */
 public class InorderTraversal {
 
-    public List<Integer> inorderTraversal(BinaryTreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
                 List<Integer> res=new ArrayList<>();
                 dfs(root,res);
                 return res;
     }
 
-    private void dfs(BinaryTreeNode root, List<Integer> res) {
+    private void dfs(TreeNode root, List<Integer> res) {
             if (null==root){
                 return;
             }
@@ -30,9 +29,9 @@ public class InorderTraversal {
             dfs(root.getRchildNode(),res);
     }
 
-    public List<Integer> inorderTraversal1(BinaryTreeNode root) {
+    public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> res=new ArrayList<>();
-        BinaryTreeNode pre = null;
+        TreeNode pre = null;
         while (root.LchildNode!=null){
             if (root.LchildNode!=null){
                 pre=root.getLchildNode();
@@ -40,7 +39,7 @@ public class InorderTraversal {
                     pre = pre.getRchildNode();
                 }
                 pre.RchildNode = root;
-                BinaryTreeNode tmp = root;
+                TreeNode tmp = root;
                 root = root.LchildNode;
                 tmp.LchildNode = null;
             }else {

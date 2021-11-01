@@ -6,12 +6,12 @@ package com.six.finger.leetcode.common;
  * @date 2021/5/11 14:26
  * 二叉树的公共类
  */
-public class BinaryTreeNode {
+public class TreeNode {
     public int data;
-    public BinaryTreeNode LchildNode;
-    public BinaryTreeNode RchildNode;
+    public TreeNode LchildNode;
+    public TreeNode RchildNode;
 
-    public BinaryTreeNode(int data) {
+    public TreeNode(int data) {
         super();
         this.data = data;
     }
@@ -24,19 +24,19 @@ public class BinaryTreeNode {
         this.data = data;
     }
 
-    public BinaryTreeNode getLchildNode() {
+    public TreeNode getLchildNode() {
         return LchildNode;
     }
 
-    public void setLchildNode(BinaryTreeNode lchildNode) {
+    public void setLchildNode(TreeNode lchildNode) {
         LchildNode = lchildNode;
     }
 
-    public BinaryTreeNode getRchildNode() {
+    public TreeNode getRchildNode() {
         return RchildNode;
     }
 
-    public void setRchildNode(BinaryTreeNode rchildNode) {
+    public void setRchildNode(TreeNode rchildNode) {
         RchildNode = rchildNode;
     }
 
