@@ -47,4 +47,31 @@ public class CanConstruct {
         }
         return flag;
     }
+
+    public static boolean canConstruct1(String ransomNote, String magazine) {
+        int[] charCountA = new int[26];
+        int[] charCountB = new int[26];
+
+
+        char[] ran = ransomNote.toCharArray();
+        char[] mag = magazine.toCharArray();
+
+        for (char c : ran) {
+            charCountA[c - 'a'] = charCountA[c - 'a'] + 1;
+        }
+
+        for (char c : mag) {
+            charCountB[c - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if (charCountA[i] > charCountB[i]) {
+                return false;
+            }
+        }
+
+        return true;
+
+
+    }
 }
