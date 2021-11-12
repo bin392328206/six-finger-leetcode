@@ -34,7 +34,6 @@ reverseList(listNode1);
             pre=curr;
             curr=next;
         }
-
         return pre;
     }
 
@@ -47,8 +46,6 @@ reverseList(listNode1);
         head.next.next = head;
         head.next = null;
         return newHead;
-
-
     }
 
 }

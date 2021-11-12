@@ -12,19 +12,20 @@ public class RemoveElements {
 
     public ListNode1 removeElements(ListNode1 head, int val) {
 
-        ListNode1 dummyHead = new ListNode1(0);
-        dummyHead.next = head;
-        ListNode1 res = dummyHead;
+        if (head == null) {
+            return null;
+        }
+        ListNode1 node1 = new ListNode1(0);
+        node1.next = head;
+        ListNode1 curr = node1;
 
-        while (res.next != null) {
-            if (res.next.val == val) {
-                res.next = res.next.next;
+        while (curr.next != null) {
+            if (curr.next.val == val) {
+                curr.next = curr.next.next;
             } else {
-                res = res.next;
+                curr = curr.next;
             }
         }
-        return dummyHead.next;
-
-
+        return node1.next;
     }
 }
