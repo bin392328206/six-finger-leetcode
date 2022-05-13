@@ -3,6 +3,8 @@ package com.six.finger.leetcode;
 
 import com.alibaba.fastjson.JSON;
 
+import java.util.Random;
+
 public class A {
 
     private String regular;
@@ -32,5 +34,8 @@ public class A {
 
         A a = JSON.parseObject(s, A.class);
         System.out.println(a);
+
+
+
     }
 }
