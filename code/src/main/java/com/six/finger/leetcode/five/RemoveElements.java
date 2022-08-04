@@ -17,6 +17,7 @@ public class RemoveElements {
 
         ListNode1 dump=new ListNode1(0);
         dump.next=head;
+
         ListNode1 cuur=dump;
 
         while (cuur!=null){
