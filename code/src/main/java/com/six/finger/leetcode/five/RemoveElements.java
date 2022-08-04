@@ -11,6 +11,7 @@ import com.six.finger.leetcode.common.ListNode1;
 public class RemoveElements {
     public ListNode1 removeElements(ListNode1 head, int val) {
 
+
         if (head==null){
             return head;
         }
