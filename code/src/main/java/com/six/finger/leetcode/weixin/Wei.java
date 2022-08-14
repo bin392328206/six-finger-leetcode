@@ -31,6 +31,9 @@ public class Wei {
 //        }
 
 
+        System.out.println();
+
+
             BigDecimal bigDecimal = new BigDecimal("1000.0000000").setScale(0, BigDecimal.ROUND_UNNECESSARY);
         System.out.println(bigDecimal);
 
