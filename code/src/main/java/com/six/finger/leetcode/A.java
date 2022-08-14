@@ -29,13 +29,15 @@ public class A {
     }
 
     public static void main(String[] args) {
-        String s="\n" +
-                "{\"regular\":\"业务资格校验[\\\\d\\\\w\\\\s\\\\D\\\\W\\\\S]+失败\",\"str\":\"业务资格校验|省份|[用户省code]|[用户所在省]|城市|[用户市code]|[用户所在市]|触点|[业务码]失败\"}";
-
-        A a = JSON.parseObject(s, A.class);
-        System.out.println(a);
-
-
-
+        boolean flag = false;
+        if (true){
+            flag=true;
+        }else {
+            flag=true;
+        }
+        if (!flag) {
+            flag = true;
+        }
+        System.out.println(flag);
     }
 }
