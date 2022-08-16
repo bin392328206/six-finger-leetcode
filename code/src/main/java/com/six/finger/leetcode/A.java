@@ -29,6 +29,8 @@ public class A {
     }
 
     public static void main(String[] args) {
+
+        System.out.println("stash 测试");
         boolean flag = false;
         if (true){
             flag=true;
