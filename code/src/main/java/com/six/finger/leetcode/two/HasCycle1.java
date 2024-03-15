@@ -2,14 +2,21 @@ package com.six.finger.leetcode.two;
 
 import com.six.finger.leetcode.common.ListNode1;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class HasCycle1 {
 
     public static void main(String[] args) {
-        ListNode1 listNode1 = new ListNode1(1);
-        hasCycle(listNode1);
+//        ListNode1 listNode1 = new ListNode1(1);
+//        hasCycle(listNode1);
+
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name","zhangsan");
+        map.put("sex",true);
+        map.put("age",34);
+        map.put("money",null);
     }
 
     public static boolean hasCycle(ListNode1 head) {
